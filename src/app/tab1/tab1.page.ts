@@ -7,22 +7,19 @@ import { DataService } from '../data.service';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page implements OnInit {
-  name:string;
   constructor(
     private service: DataService
-  ) {
+  ) { }
 
-  searchButtonClicked(){
-    
-    //bilder anzeigen
-    //name speichern
+  name: string;
+  ngOnInit(): void {
+    this.service.presentFeedback('Hello', 'success');
   }
 
-ngOnInit() {
-  this.service.presentFeedback('Hello', 'success');
+  searchButtonClicked() {
 
-  ngOnInit() {
-    this.service.presentFeedback('Hello', 'success');
+    // bilder anzeigen
+    // name speichern
   }
 
 }
