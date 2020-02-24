@@ -1,17 +1,27 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      History
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title color="danger">
+        Searched accounts
+      </ion-card-title>
+    </ion-card-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+    <ion-row style="border-bottom: groove; padding-left: 16px;" *ngFor="let account of accounts">
+      <ion-col col-4>
+        <ion-label>
+          {{ account }}
+        </ion-label>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
+
 </ion-content>
