@@ -1,41 +1,32 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Who do you want to search for?
-    </ion-title>
+    <ion-item text-wrap>
+      <ion-title>Who do you want to search for?</ion-title>
+    </ion-item>
   </ion-toolbar>
 </ion-header>
 
 <ion-content fullscreen>
 
-      <ion-item>
+  <ion-item>
+    <ion-label position="floating">Instagram Name</ion-label>
+    <ion-input [(ngModel)]="name" clear-input=true></ion-input>
+  </ion-item>
 
-        <ion-label position="stacked">Instagram name<ion-text color="danger">*</ion-text></ion-label>
-        <ion-input [(ngModel)]="name" clear-input=true></ion-input>
+  <div class="ion-padding">
+    <ion-button expand="block" (click)='searchButtonClicked()' type="submit" class="ion-no-margin">Let's stalk!
+    </ion-button>
+  </div>
 
-      </ion-item>
+  <ion-list *ngFor="let picture of pictures">
+    <ion-card>
+      <ion-card-content>
+        <ion-img [src]="picture" style="margin-bottom: 2%;"></ion-img>
+        <ion-button expand="block" (click)='pictureButtonClicked(picture)' type="submit" class="ion-no-margin">
+          Get details!
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
 
-    <div class="ion-padding">
-
-      <ion-button expand="block" (click)='searchButtonClicked()' type="submit" class="ion-no-margin">Let's stalk!</ion-button>
-
-    </div>
-
-    <ion-list *ngFor="let picture of pictures">
-      
-      
-      <ion-card>
-
-
-        <ion-card-content>
-
-          <ion-img [src]="picture" style="margin-bottom: 2%;"></ion-img>
-          <ion-button expand="block" (click)='pictureButtonClicked(picture)' type="submit" class="ion-no-margin">Get details!</ion-button>
-
-        </ion-card-content>
-
-      </ion-card>
-
-    </ion-list>
-    
 </ion-content>

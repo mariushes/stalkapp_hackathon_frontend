@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
 export class DataService {
     backendUrl: 'http://localhost:8080';
     pictureArray: Observable<any>;
+    wikipediaEntry: Observable<any>;
 
     constructor(
         private toastCtrl: ToastController,
@@ -24,8 +25,8 @@ export class DataService {
         this.pictureArray = this.httpClient.get(this.backendUrl + '/api/' + name);
         this.pictureArray
             .subscribe(data => {
-                console.log('response: ', data);
-                return data;
+                console.log('response pictures: ', data);
+                return data['result'];
             });
 
 
@@ -37,7 +38,30 @@ export class DataService {
 
     getWikipediaContentByPicture(pictureUrl: string) {
         // returns wikiepdia text
-        return "Beschreibung";
+        return new Promise((resolve, reject) => {
+            const body = {
+                photo_url: pictureUrl
+            };
+
+            resolve({
+                wikipediaText: 'Auf diesem Bild ist leider nichts zu sehen'
+            });
+
+            this.wikipediaEntry = this.httpClient.post(this.backendUrl + '/api/photo', body);
+            this.wikipediaEntry
+                .subscribe(
+                    res => {
+                        console.log('response wikipedia: ', res);
+                        resolve(res);
+                    },
+                    err => {
+                        console.log('error wikipedia: ', err);
+                        reject(err);
+                    }
+                );
+        });
+
+
     }
 
     /*
@@ -54,7 +78,7 @@ export class DataService {
         });
     }
 
-    persistData(key: string, data: Array<String>) {
+    persistData(key: string, data: Array<string>) {
         this.storage.set(key, data);
     }
 
