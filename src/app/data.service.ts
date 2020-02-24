@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ToastController } from '@ionic/angular';
+import { Storage } from '@ionic/storage';
 
 @Injectable({
     providedIn: 'root'
@@ -7,13 +8,17 @@ import { ToastController } from '@ionic/angular';
 export class DataService {
     constructor(
         private toastCtrl: ToastController,
-) { }
+        private storage: Storage
+    ) { }
 
     /*
    Communication Handling with Backend
     */
     getPicturesByInstagramUsername(name: string) {
-        // returns the picture urls
+        const url1 = 'https://images.pexels.com/photos/240040/pexels-photo-240040.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500';
+        const url2 = 'https://upload.wikimedia.org/wikipedia/commons/e/ea/Ice_cream_cone_%28cropped%29.jpg';
+        const response = [url1, url2];
+        return response;
     }
 
     getWikipediaContentByPicture(pictureUrl: string) {
@@ -21,7 +26,7 @@ export class DataService {
     }
 
     /*
-    Utility functions, e.g. provide visual feedback on UI
+    Utility functions, e.g. provide visual feedback on UI or store data in cache
     */
     presentFeedback(text: string, colorKind: string) {
         this.toastCtrl.create({
@@ -32,5 +37,13 @@ export class DataService {
         }).then(toast => {
             toast.present();
         });
+    }
+
+    persistData(key: string, data: string) {
+        this.storage.set(key, data);
+    }
+
+    reaData(key: string) {
+        this.storage.get(key);
     }
 }

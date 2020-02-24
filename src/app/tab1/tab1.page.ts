@@ -9,12 +9,13 @@ import { DataService } from '../data.service';
 export class Tab1Page implements OnInit {
 
   constructor(
-    private service: DataService,
-  ) {}
+    private service: DataService
+  ) {
 
-ngOnInit() {
-  this.service.presentFeedback('Hello', 'success');
+  }
 
-}
+  ngOnInit() {
+    this.service.presentFeedback('Hello', 'success');
+  }
 
 }
