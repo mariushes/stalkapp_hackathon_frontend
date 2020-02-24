@@ -1,17 +1,45 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Who do you want to search for?
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
-sjdak
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+<ion-content fullscreen>
+
+      <ion-item>
+
+        <ion-label position="stacked">Instagram name<ion-text color="danger">*</ion-text></ion-label>
+        <ion-input [(ngModel)]="name" clear-input=true></ion-input>
+
+      </ion-item>
+
+    <div class="ion-padding">
+
+      <ion-button expand="block" (click)='searchButtonClicked()' type="submit" class="ion-no-margin">Let'stalk!</ion-button>
+
+    </div>
+
+    <ion-list>
+
+      <ion-list-header>
+
+        Recently posted images
+
+      </ion-list-header>
+
+
+      <ion-item>
+        <!--
+        <ion-avatar slot="start">
+
+           <img src="./avatar-finn.png"> 
+
+        </ion-avatar>
+
+      -->
+      </ion-item>
+    </ion-list>
+    
 </ion-content>
