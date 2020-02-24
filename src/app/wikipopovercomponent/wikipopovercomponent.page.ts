@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController, NavParams } from '@ionic/angular';
 import { DataService } from '../data.service';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @Component({
   selector: 'app-wikipopovercomponent',
@@ -14,18 +15,10 @@ export class WikipopovercomponentPage implements OnInit {
     private modalController: ModalController,
     private service: DataService,
     private navParams: NavParams,
+    private iab: InAppBrowser
   ) { }
 
   ngOnInit() {
-    this.service.getWikipediaContentByPicture(this.navParams.get('passedData')).then(data => {
-      this.wikipediaContent = data['wikipediaText'];
-    }).catch(err => {
-      this.service.presentFeedback('Error occured: ' + err, 'danger');
-    });
-  }
-
-  cancel() {
-    this.modalController.dismiss();
   }
 
 }
