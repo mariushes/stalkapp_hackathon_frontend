@@ -5,8 +5,13 @@ import { Component } from '@angular/core';
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss']
 })
+
 export class Tab1Page {
-
+  name: string;
   constructor() {}
-
+  searchButtonClicked(){
+    
+    //bilder anzeigen
+    //name speichern
+  }
 }
