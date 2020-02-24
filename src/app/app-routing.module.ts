@@ -6,6 +6,10 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+  },
+  {
+    path: 'wikipopovercomponent',
+    loadChildren: () => import('./wikipopovercomponent/wikipopovercomponent.module').then( m => m.WikipopovercomponentPageModule)
   }
 ];
 @NgModule({

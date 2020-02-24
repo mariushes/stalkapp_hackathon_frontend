@@ -7,19 +7,19 @@ import { DataService } from '../data.service';
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss']
 })
-export class Tab2Page implements OnInit{
+export class Tab2Page implements OnInit {
   public accounts: Array<string> = new Array<string>();
-  
+
   constructor(
-    //private accounts: Array<Storage>, 
+    // private accounts: Array<Storage>,
     private service: DataService
-  )  { }
+  ) { }
 
   ngOnInit() {
-    this.service.reaData("searchHistory").then( usernameArray => {
+    this.service.reaData('searchHistory').then(usernameArray => {
       console.log(usernameArray),
-      this.accounts.push(usernameArray);
-    })
+        this.accounts = usernameArray;
+    });
   }
 
 }
