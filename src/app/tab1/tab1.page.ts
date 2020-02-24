@@ -12,9 +12,6 @@ export class Tab1Page implements OnInit {
     private service: DataService
   ) {
 
-<<<<<<< HEAD
-  }
-=======
   searchButtonClicked(){
     
     //bilder anzeigen
@@ -23,7 +20,6 @@ export class Tab1Page implements OnInit {
 
 ngOnInit() {
   this.service.presentFeedback('Hello', 'success');
->>>>>>> 60b1edec9bdb9764fd9d492a62e24080ac04021a
 
   ngOnInit() {
     this.service.presentFeedback('Hello', 'success');
