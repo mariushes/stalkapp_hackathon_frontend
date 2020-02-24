@@ -17,29 +17,25 @@
 
     <div class="ion-padding">
 
-      <ion-button expand="block" (click)='searchButtonClicked()' type="submit" class="ion-no-margin">Let'stalk!</ion-button>
+      <ion-button expand="block" (click)='searchButtonClicked()' type="submit" class="ion-no-margin">Let's stalk!</ion-button>
 
     </div>
 
-    <ion-list>
-
-      <ion-list-header>
-
-        Recently posted images
-
-      </ion-list-header>
+    <ion-list *ngFor="let picture of pictures">
+      
+      
+      <ion-card>
 
 
-      <ion-item>
-        <!--
-        <ion-avatar slot="start">
+        <ion-card-content>
 
-           <img src="./avatar-finn.png"> 
+          <ion-img [src]="picture" style="margin-bottom: 2%;"></ion-img>
+          <ion-button expand="block" (click)='pictureButtonClicked(picture)' type="submit" class="ion-no-margin">Get details!</ion-button>
 
-        </ion-avatar>
+        </ion-card-content>
 
-      -->
-      </ion-item>
+      </ion-card>
+
     </ion-list>
     
 </ion-content>

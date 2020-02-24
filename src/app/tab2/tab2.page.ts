@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Storage, StorageConfigToken } from '@ionic/storage';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-tab2',
@@ -6,19 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page implements OnInit{
-  public accounts: Array<string>;
-
-  constructor() {}
+  public accounts: Array<string> = new Array<string>();
+  
+  constructor(
+    //private accounts: Array<Storage>, 
+    private service: DataService
+  )  { }
 
   ngOnInit() {
-    this.accounts = new Array<string>();
-    this.accounts.push("person1");
-    this.accounts.push("person2");
-    this.accounts.push("person3");
+    this.service.reaData("searchHistory").then( usernameArray => {
+      console.log(usernameArray),
+      this.accounts.push(usernameArray);
+    })
   }
 
-  addAccount(){
-    // for()
-    //   this.accounts.push();
-  }
 }
