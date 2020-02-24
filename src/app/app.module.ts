@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { IonicStorageModule } from '@ionic/storage';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { WikipopovercomponentPageModule } from './wikipopovercomponent/wikipopovercomponent.module';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { WikipopovercomponentPageModule } from './wikipopovercomponent/wikipopov
   providers: [
     StatusBar,
     HttpClient,
+    InAppBrowser,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
