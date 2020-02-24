@@ -1,17 +1,90 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+<ion-content fullscreen>
+  <ion-header [translucent]="true">
     <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
+      <ion-title>
+        StalkApp
+      </ion-title>
     </ion-toolbar>
   </ion-header>
+  
+  <ion-card class="myCard" style="top: 0px;">
+    <img src="data:image/jpeg;base64,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"/>
+    <div class="myOverlay">
+      <ion-text color="primary" class="ion-align-self-start" class="ion-text-center">
+        <div class="title" style="text-align: center; padding-top: 25px;"> ABOUT US</div>
+      </ion-text>
+    </div>
+  </ion-card>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+
+  <ion-card  style="text-align: center;" >
+    <ion-text color="primary" style="font-size: medium; padding: 20px 20px;">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <h2>
+              What we offer?
+            </h2>
+          </ion-col>
+          <ion-col>
+            <h2>
+              How to use it?
+            </h2>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <div>An app which gives you </div>
+            <div>full information about </div>
+            <div>a person you are serching </div>
+            <div>based on her/his name </div>
+            <div>from Instagram</div>
+          </ion-col>
+          <ion-col>
+            <div>1. Write the account name of the person</div>
+            <div>2. Select the image of the person</div>
+            <div>3. Now you have full information</div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-text>
+  </ion-card>
+
+  <ion-card  style="margin: 10px 10px;">
+    <ion-text color="tertiary" style="font-size: medium; padding: 20px 20px;">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <h2 style="text-align: center;">
+              Technologies:
+            </h2>
+          </ion-col>
+        </ion-row>
+        <ion-row style="text-align: center;">
+          <ion-col>
+            <h3>FrontEnd</h3>
+          </ion-col>
+          <ion-col>
+            <h3>BackEnd</h3>
+          </ion-col>
+        </ion-row>
+        <ion-row style="text-align: center;">
+          <ion-col>
+            <div>1. TypeScript</div>
+            <div>2. Ionic</div>
+          </ion-col>
+          <ion-col>
+            <div>1. JavaScript</div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-text>
+  </ion-card>
+
 </ion-content>
+
+
+
+
+
+
