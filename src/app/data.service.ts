@@ -23,6 +23,7 @@ export class DataService {
 
     getWikipediaContentByPicture(pictureUrl: string) {
         // returns wikiepdia text
+        return "Beschreibung";
     }
 
     /*
@@ -39,11 +40,12 @@ export class DataService {
         });
     }
 
-    persistData(key: string, data: string) {
+    persistData(key: string, data: Array<String>) {
         this.storage.set(key, data);
     }
 
     reaData(key: string) {
-        this.storage.get(key);
+        return this.storage.get(key);
+        
     }
 }

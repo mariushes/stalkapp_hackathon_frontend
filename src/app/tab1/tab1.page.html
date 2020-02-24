@@ -21,25 +21,21 @@
 
     </div>
 
-    <ion-list>
-
-      <ion-list-header>
-
-        <h2>Recently posted images</h2> 
-
-      </ion-list-header>
+    <ion-list *ngFor="let picture of pictures">
+      
+      
+      <ion-card>
 
 
-      <ion-item>
-        <!--
-        <ion-avatar slot="start">
+        <ion-card-content>
 
-           <img src="./avatar-finn.png"> 
+          <ion-img [src]="picture" style="margin-bottom: 2%;"></ion-img>
+          <ion-button expand="block" (click)='pictureButtonClicked(picture)' type="submit" class="ion-no-margin">Get details!</ion-button>
 
-        </ion-avatar>
+        </ion-card-content>
 
-      -->
-      </ion-item>
+      </ion-card>
+
     </ion-list>
     
 </ion-content>
